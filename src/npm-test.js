@@ -42,6 +42,4 @@ function test() {
     return deferred.promise;
 }
 
-module.exports = {
-    test: test
-};
+module.exports = test;
