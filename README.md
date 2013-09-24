@@ -3,9 +3,7 @@
 Async NPM shell commands: install, test, etc.
 
 [![NPM info][nodei.co]][npm-url]
-
-![Build status][ci-image]
-
+[![Build][npm-utils-ci-image]][npm-utils-ci-url]
 [![dependencies][dependencies-image]][dependencies-url]
 [![endorse][endorse-image]][endorse-url]
 
