@@ -13,9 +13,10 @@ Author: Gleb Bahmutov @ 2013 @bahmutov
 
 License: MIT - do anything with the code, but don't blame me if it does not work.
 
-[ci-image]: https://www.codeship.io/projects/3887dc60-007b-0131-a7ef-76c3dfc91daa/status
 [nodei.co]: https://nodei.co/npm/npm-utils.png?downloads=true
 [npm-url]: https://npmjs.org/package/npm-utils
+[npm-utils-ci-image]: https://secure.travis-ci.org/bahmutov/npm-utils.png?branch=master
+[npm-utils-ci-url]: http://travis-ci.org/#!/bahmutov/npm-utils
 [dependencies-image]: https://david-dm.org/bahmutov/npm-utils.png
 [dependencies-url]: https://david-dm.org/bahmutov/npm-utils
 [endorse-image]: https://api.coderwall.com/bahmutov/endorsecount.png
