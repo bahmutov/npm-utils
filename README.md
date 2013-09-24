@@ -7,6 +7,31 @@ Async NPM shell commands: install, test, etc.
 [![dependencies][dependencies-image]][dependencies-url]
 [![endorse][endorse-image]][endorse-url]
 
+## API
+
+```javascript
+path() // returns immediately path to npm command
+```
+
+```javascript
+install({
+	name: string,
+	version: string (optional),
+	prefix: string (optional), // folder path prefix
+	passThroughData: obj (optional)
+})
+
+returns a promise
+```
+
+```javascript
+version() // returns a promise, resolved with version string
+```
+
+```javascript
+test() // spawns npm test command
+```
+
 ## Small print
 
 Author: Gleb Bahmutov @ 2013 @bahmutov
