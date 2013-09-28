@@ -17,7 +17,8 @@
   "license": "MIT",
   "dependencies": {
     "check-types": "~0.6.4",
-    "q": "~0.9.6"
+    "q": "~0.9.6",
+    "verbal-expressions": "~0.1.0"
   },
   "devDependencies": {
     "gt": "~0.8.10"
