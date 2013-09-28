@@ -6,7 +6,10 @@
   "scripts": {
     "test": "node ./node_modules/gt src/test/*.js --output"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bahmutov/npm-utils.git"
+  },
   "keywords": [
     "npm",
     "command",
