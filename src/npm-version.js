@@ -5,42 +5,42 @@ var NPM_PATH = require('./npm-path');
 
 // returns a promise
 function version() {
-    console.log('  npm version');
-    check.verifyString(NPM_PATH, 'missing npm path string');
-    var npm = spawn(NPM_PATH, ['--version']);
-    var output = '';
-    var errors = '';
+  console.log('  npm version');
+  check.verifyString(NPM_PATH, 'missing npm path string');
+  var npm = spawn(NPM_PATH, ['--version']);
+  var output = '';
+  var errors = '';
 
-    npm.stdout.setEncoding('utf-8');
-    npm.stderr.setEncoding('utf-8');
+  npm.stdout.setEncoding('utf-8');
+  npm.stderr.setEncoding('utf-8');
 
-    npm.stdout.on('data', function (data) {
-        output += data;
-    });
+  npm.stdout.on('data', function (data) {
+    output += data;
+  });
 
-    npm.stderr.on('data', function (data) {
-        errors += data;
-    });
+  npm.stderr.on('data', function (data) {
+    errors += data;
+  });
 
-    npm.on('error', function (err) {
-        console.error(err);
-        errors += err.toString();
-    });
+  npm.on('error', function (err) {
+    console.error(err);
+    errors += err.toString();
+  });
 
-    var deferred = q.defer();
-    npm.on('exit', function (code) {
-        if (code) {
-            console.error('npm version returned', code);
-            console.error('errors:\n' + errors);
-            deferred.reject({
-                code: code,
-                errors: errors
-            });
-        }
-        check.verifyString(output, 'could not get npm version');
-        deferred.resolve(output);
-    });
-    return deferred.promise;
+  var deferred = q.defer();
+  npm.on('exit', function (code) {
+    if (code) {
+      console.error('npm version returned', code);
+      console.error('errors:\n' + errors);
+      deferred.reject({
+        code: code,
+        errors: errors
+      });
+    }
+    check.verifyString(output, 'could not get npm version');
+    deferred.resolve(output);
+  });
+  return deferred.promise;
 }
 
 module.exports = version;

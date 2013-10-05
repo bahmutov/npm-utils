@@ -5,41 +5,41 @@ var NPM_PATH = require('./npm-path');
 
 // returns a promise
 function test() {
-    console.log('  npm test');
-    check.verifyString(NPM_PATH, 'missing npm path string');
-    var npm = spawn(NPM_PATH, ['test']);
-    var testOutput = '';
-    var testErrors = '';
+  console.log('  npm test');
+  check.verifyString(NPM_PATH, 'missing npm path string');
+  var npm = spawn(NPM_PATH, ['test']);
+  var testOutput = '';
+  var testErrors = '';
 
-    npm.stdout.setEncoding('utf-8');
-    npm.stderr.setEncoding('utf-8');
+  npm.stdout.setEncoding('utf-8');
+  npm.stderr.setEncoding('utf-8');
 
-    npm.stdout.on('data', function (data) {
-        testOutput += data;
-    });
+  npm.stdout.on('data', function (data) {
+    testOutput += data;
+  });
 
-    npm.stderr.on('data', function (data) {
-        testErrors += data;
-    });
+  npm.stderr.on('data', function (data) {
+    testErrors += data;
+  });
 
-    npm.on('error', function (err) {
-        console.error(err);
-        testErrors += err.toString();
-    });
+  npm.on('error', function (err) {
+    console.error(err);
+    testErrors += err.toString();
+  });
 
-    var deferred = q.defer();
-    npm.on('exit', function (code) {
-        if (code) {
-            console.error('npm test returned', code);
-            console.error('test errors:\n' + testErrors);
-            deferred.reject({
-                code: code,
-                errors: testErrors
-            });
-        }
-        deferred.resolve();
-    });
-    return deferred.promise;
+  var deferred = q.defer();
+  npm.on('exit', function (code) {
+    if (code) {
+      console.error('npm test returned', code);
+      console.error('test errors:\n' + testErrors);
+      deferred.reject({
+        code: code,
+        errors: testErrors
+      });
+    }
+    deferred.resolve();
+  });
+  return deferred.promise;
 }
 
 module.exports = test;
