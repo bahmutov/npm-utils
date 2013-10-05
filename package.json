@@ -6,7 +6,9 @@
   "scripts": {
     "test": "node ./node_modules/gt src/test/*.js --output"
   },
-  "pre-commit": ["grunt"],
+  "pre-commit": [
+    "grunt"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/bahmutov/npm-utils.git"
@@ -30,6 +32,7 @@
     "grunt": "~0.4.1",
     "grunt-bump": "0.0.11",
     "matchdep": "~0.1.2",
-    "pre-git": "0.0.8"
+    "pre-git": "0.0.8",
+    "grunt-complexity": "~0.1.3"
   }
 }
