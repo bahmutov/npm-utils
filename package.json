@@ -24,6 +24,10 @@
     "verbal-expressions": "~0.1.0"
   },
   "devDependencies": {
-    "gt": "~0.8.10"
+    "gt": "~0.8.10",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt": "~0.4.1",
+    "grunt-bump": "0.0.11",
+    "matchdep": "~0.1.2"
   }
 }
