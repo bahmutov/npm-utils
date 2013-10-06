@@ -22,17 +22,17 @@
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "check-types": "~0.6.4",
-    "q": "~0.9.6",
+    "check-types": "~0.6.5",
+    "q": "~0.9.7",
     "verbal-expressions": "~0.1.0"
   },
   "devDependencies": {
-    "gt": "~0.8.10",
+    "gt": "~0.8.12",
     "grunt-contrib-jshint": "~0.6.4",
     "grunt": "~0.4.1",
     "grunt-bump": "0.0.11",
     "matchdep": "~0.1.2",
-    "pre-git": "0.0.8",
+    "pre-git": "0.0.10",
     "grunt-complexity": "~0.1.3"
   }
 }
