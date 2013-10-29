@@ -6,7 +6,7 @@ var NPM_PATH = require('./npm-path');
 // returns a promise
 function version() {
   console.log('  npm version');
-  check.verifyString(NPM_PATH, 'missing npm path string');
+  check.verify.string(NPM_PATH, 'missing npm path string');
   var npm = spawn(NPM_PATH, ['--version']);
   var output = '';
   var errors = '';
@@ -37,7 +37,7 @@ function version() {
         errors: errors
       });
     }
-    check.verifyString(output, 'could not get npm version');
+    check.verify.string(output, 'could not get npm version');
     deferred.resolve(output);
   });
   return deferred.promise;

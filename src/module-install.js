@@ -5,18 +5,18 @@ var NPM_PATH = require('./npm-path');
 
 function promiseToInstall(opts) {
   var name = opts.name;
-  check.verifyString(name, 'expected module name string');
+  check.verify.string(name, 'expected module name string');
 
   var moduleVersion = name;
   if (opts.version) {
-    check.verifyString(opts.version, 'expected version string');
+    check.verify.string(opts.version, 'expected version string');
     moduleVersion = moduleVersion + '@' + opts.version;
   }
   console.log('  installing', moduleVersion);
 
   var args = ['install'];
   if (opts.prefix) {
-    check.verifyString(opts.prefix,
+    check.verify.string(opts.prefix,
       'install folder prefix should be a string, not ' + opts.prefix);
     args.push('-g');
     args.push('--prefix');

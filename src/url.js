@@ -17,7 +17,7 @@ var gitTester = new VerEx()
   .endOfLine();
 
 function isUrl(str) {
-  check.verifyString(str, 'expected a string');
+  check.verify.string(str, 'expected a string');
   return httpTester.test(str) || gitTester.test(str);
 }
 
