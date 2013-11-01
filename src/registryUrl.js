@@ -36,7 +36,7 @@ function registryUrl() {
         errors: errors
       });
     }
-    deferred.resolve(output);
+    deferred.resolve(output.trim());
   });
   return deferred.promise;
 }
