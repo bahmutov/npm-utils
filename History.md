@@ -1,4 +1,11 @@
 
+0.0.6 / 2013-10-31
+==================
+
+  * added method to get npm registry url
+  * supporting check-types@1.1.0
+  * bumped versions
+
 0.0.5 / 2013-10-29
 ==================
 
