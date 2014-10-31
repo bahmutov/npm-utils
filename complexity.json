@@ -2,8 +2,8 @@
   "src": ["Gruntfile.js", "src/*.js"],
   "options": {
     "errorsOnly": false,
-    "cyclomatic": 3,
-    "halstead": 12,
+    "cyclomatic": 5,
+    "halstead": 14,
     "maintainability": 100
   }
 }
