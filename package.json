@@ -3,6 +3,10 @@
   "description": "Async NPM shell commands",
   "version": "0.0.9",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/bahmutov/npm-utils/issues"
+  },
+  "contributors": [],
   "dependencies": {
     "check-types": "1.4.0",
     "q": "2.0.2",
@@ -21,6 +25,7 @@
   "engines": {
     "node": ">= 0.10.0"
   },
+  "homepage": "https://github.com/bahmutov/npm-utils",
   "keywords": [
     "npm",
     "command",
@@ -30,7 +35,8 @@
   "license": "MIT",
   "main": "index.js",
   "pre-commit": [
-    "grunt"
+    "grunt",
+    "npm version"
   ],
   "repository": {
     "type": "git",
