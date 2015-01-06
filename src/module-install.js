@@ -43,6 +43,7 @@ function promiseToRun(args, passThroughData) {
 }
 
 function promiseToInstall(opts) {
+  opts = opts || {};
   var name = opts.name, moduleVersion = name;
   if (name) {
     check.verify.string(name, 'expected module name string');
