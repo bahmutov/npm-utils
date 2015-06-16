@@ -29,10 +29,12 @@ function test(cmd) {
   npm.stderr.setEncoding('utf-8');
 
   npm.stdout.on('data', function (data) {
+    process.stdout.write(data);
     testOutput += data;
   });
 
   npm.stderr.on('data', function (data) {
+    process.stderr.write(data);
     testErrors += data;
   });
 
