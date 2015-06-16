@@ -4,10 +4,19 @@ var q = require('q');
 var NPM_PATH = require('./npm-path');
 
 // returns a promise
-function test() {
-  console.log('  npm test');
+function test(cmd) {
+  var app = NPM_PATH;
+  var parts = ['test'];
   check.verify.string(NPM_PATH, 'missing npm path string');
-  var npm = spawn(NPM_PATH, ['test']);
+
+  if (check.unemptyString(cmd)) {
+    parts = cmd.split(' ');
+    app = cmd.shift();
+  } else {
+    console.log('  npm test');
+  }
+
+  var npm = spawn(app, parts);
   var testOutput = '';
   var testErrors = '';
 

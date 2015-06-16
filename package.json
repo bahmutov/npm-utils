@@ -1,7 +1,7 @@
 {
   "name": "npm-utils",
   "description": "Async NPM shell commands",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "bugs": {
     "url": "https://github.com/bahmutov/npm-utils/issues"

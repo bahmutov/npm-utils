@@ -32,6 +32,7 @@ version() // returns a promise, resolved with version string
 
 ```javascript
 test() // spawns npm test command
+test('grunt test'); // spawns new command "grunt test"
 ```
 
 ```javascript
@@ -44,6 +45,10 @@ registryUrl(); // returns a promise
 Author: Gleb Bahmutov @ 2013 @bahmutov
 
 License: MIT - do anything with the code, but don't blame me if it does not work.
+
+* [@bahmutov](https://twitter.com/bahmutov)
+* [glebbahmutov.com](http://glebbahmutov.com)
+* [blog](http://glebbahmutov.com/blog)
 
 [nodei.co]: https://nodei.co/npm/npm-utils.png?downloads=true
 [npm-url]: https://npmjs.org/package/npm-utils
