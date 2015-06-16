@@ -15,10 +15,12 @@ function promiseToRun(args, passThroughData) {
 
   npm.stdout.on('data', function (data) {
     output += data;
+    process.stdout.write(data);
   });
 
   npm.stderr.on('data', function (data) {
     errors += data;
+    process.stderr.write(data);
   });
 
   npm.on('error', function (err) {
