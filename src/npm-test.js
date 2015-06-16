@@ -11,7 +11,8 @@ function test(cmd) {
 
   if (check.unemptyString(cmd)) {
     parts = cmd.split(' ');
-    app = cmd.shift();
+    app = parts.shift();
+    console.log('  %s', cmd);
   } else {
     console.log('  npm test');
   }
