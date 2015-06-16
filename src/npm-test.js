@@ -1,3 +1,4 @@
+require('lazy-ass');
 var check = require('check-types');
 var spawn = require('child_process').spawn;
 var q = require('q');
@@ -9,13 +10,16 @@ function test(cmd) {
   var parts = ['test'];
   check.verify.string(NPM_PATH, 'missing npm path string');
 
+
   if (check.unemptyString(cmd)) {
+    cmd = cmd.trim();
     parts = cmd.split(' ');
     app = parts.shift();
-    console.log('  %s', cmd);
-  } else {
-    console.log('  npm test');
   }
+
+  console.log('spawning test process', app, parts);
+  la(check.unemptyString(app), 'application name should be a string', app);
+  la(check.arrayOfStrings(parts), 'arguments should be an array', parts);
 
   var npm = spawn(app, parts);
   var testOutput = '';
