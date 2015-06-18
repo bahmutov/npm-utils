@@ -4,5 +4,5 @@ module.exports = {
   path: require('./src/npm-path'),
   version: require('./src/npm-version'),
   isUrl: require('./src/url'),
-  registryUrl: require('./src/registryUrl')
+  registryUrl: require('./src/registry-url')
 };

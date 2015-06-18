@@ -1,7 +1,7 @@
 gt.module('npm registry');
 var check = require('check-types');
 
-var registryUrl = require('../registryUrl');
+var registryUrl = require('../registry-url');
 
 gt.asyncTest('getting npm registry url', 2, function () {
   var promise = registryUrl();

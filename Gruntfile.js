@@ -11,11 +11,17 @@ module.exports = function(grunt) {
       all: {
         options: {}
       }
+    },
+    filenames: {
+      options: {
+        valid: 'dashes'
+      },
+      src: 'src/**/*.js'
     }
   });
 
   var plugins = require('matchdep').filterDev('grunt-*');
   plugins.forEach(grunt.loadNpmTasks);
 
-  grunt.registerTask('default', ['nice-package', 'jshint', 'complexity']);
+  grunt.registerTask('default', ['nice-package', 'jshint', 'complexity', 'filenames']);
 };
