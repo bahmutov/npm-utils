@@ -20,7 +20,7 @@
     "grunt-contrib-jshint": "0.11.3",
     "grunt-filenames": "0.4.0",
     "grunt-nice-package": "0.9.4",
-    "gt": "0.8.48",
+    "gt": "0.8.49",
     "matchdep": "1.0.0",
     "pre-git": "0.6.2"
   },
