@@ -29,10 +29,10 @@
   },
   "homepage": "https://github.com/bahmutov/npm-utils",
   "keywords": [
-    "npm",
+    "async",
     "command",
-    "shell",
-    "async"
+    "npm",
+    "shell"
   ],
   "license": "MIT",
   "main": "index.js",
