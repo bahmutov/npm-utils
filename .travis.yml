@@ -16,6 +16,7 @@ script:
   - npm test
 after_success:
   - npm run semantic-release
+  - npm run coverage-codacy
 branches:
   except:
     - "/^v\\d+\\.\\d+\\.\\d+$/"
