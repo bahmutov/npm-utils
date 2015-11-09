@@ -1,7 +1,7 @@
 {
   "name": "npm-utils",
   "description": "Async NPM shell commands",
-  "version": "0.1.6",
+  "version": "0.0.0-semantic",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "bugs": {
     "url": "https://github.com/bahmutov/npm-utils/issues"
@@ -37,7 +37,8 @@
     "grunt-nice-package": "0.9.4",
     "gt": "0.8.49",
     "matchdep": "1.0.0",
-    "pre-git": "1.2.1"
+    "pre-git": "1.2.1",
+    "semantic-release": "4.3.5"
   },
   "engines": {
     "node": ">= 0.10.0"
@@ -57,6 +58,7 @@
   },
   "scripts": {
     "commit": "./node_modules/pre-git/node_modules/commitizen/bin/git-cz",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "gt src/test/*.js --output"
   }
 }
