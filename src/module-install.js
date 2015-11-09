@@ -1,3 +1,4 @@
+require('lazy-ass');
 var check = require('check-more-types');
 var spawn = require('child_process').spawn;
 var q = require('q');
@@ -66,6 +67,11 @@ function promiseToInstall(opts) {
     args.push('-g');
     args.push('--prefix');
     args.push(opts.prefix);
+  }
+  if (opts.registry) {
+    la(check.string(opts.registry), 'expected registry url string', opts);
+    args.push('--registry');
+    args.push(opts.registry);
   }
   if (moduleVersion) {
     args.push(moduleVersion);

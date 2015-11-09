@@ -6,7 +6,8 @@ gt.async('install into tmp folder', function () {
   gt.func(install, 'install is a function');
   var options = {
     name: 'lodash',
-    prefix: '/tmp/lodash-prefix/'
+    prefix: '/tmp/lodash-prefix/',
+    registry: 'http://registry.npmjs.org/'
   };
   install(options).then(function () {
     return path.join(options.prefix, '/lib/node_modules/' + options.name);

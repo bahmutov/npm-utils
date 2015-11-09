@@ -22,31 +22,32 @@ npmUtils.version()
 
 ## API
 
-```javascript
+```js
 path() // returns immediately path to npm command
 ```
 
-```javascript
+```js
 install({
 	name: string,
 	version: string (optional),
 	prefix: string (optional), // folder path prefix
-	passThroughData: obj (optional)
+	passThroughData: obj (optional),
+  registry: string (optional) // registry url
 })
 
 returns a promise
 ```
 
-```javascript
+```js
 version() // returns a promise, resolved with NPM version string
 ```
 
-```javascript
+```js
 test() // spawns npm test command
 test('grunt test'); // spawns new command "grunt test"
 ```
 
-```javascript
+```js
 registryUrl(); // returns a promise
 // same as `npm config get registry`
 ```
