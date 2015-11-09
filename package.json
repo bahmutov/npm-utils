@@ -60,8 +60,8 @@
   },
   "scripts": {
     "commit": "./node_modules/pre-git/node_modules/commitizen/bin/git-cz",
+    "coverage-codacy": "cat cover/lcov.info | ./node_modules/.bin/codacy-coverage -v -d",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "test": "gt src/test/*.js --output",
-    "coverage-codacy": "cat cover/lcov.info | ./node_modules/.bin/codacy-coverage -v -d"
+    "test": "gt src/test/*.js --output"
   }
 }
