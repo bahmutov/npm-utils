@@ -6,7 +6,22 @@
   "bugs": {
     "url": "https://github.com/bahmutov/npm-utils/issues"
   },
+  "config": {
+    "pre-git": {
+      "commit-msg": "validate-commit-msg",
+      "pre-commit": [
+        "grunt",
+        "npm version"
+      ],
+      "pre-push": [],
+      "post-commit": [],
+      "post-merge": []
+    }
+  },
   "contributors": [],
+  "czConfig": {
+    "path": "node_modules/pre-git/node_modules/cz-conventional-changelog"
+  },
   "dependencies": {
     "check-types": "1.4.0",
     "lazy-ass": "0.6.0",
@@ -22,7 +37,7 @@
     "grunt-nice-package": "0.9.4",
     "gt": "0.8.49",
     "matchdep": "1.0.0",
-    "pre-git": "0.6.2"
+    "pre-git": "1.2.1"
   },
   "engines": {
     "node": ">= 0.10.0"
@@ -36,15 +51,12 @@
   ],
   "license": "MIT",
   "main": "index.js",
-  "pre-commit": [
-    "grunt",
-    "npm version"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/bahmutov/npm-utils.git"
   },
   "scripts": {
+    "commit": "./node_modules/pre-git/node_modules/commitizen/bin/git-cz",
     "test": "gt src/test/*.js --output"
   }
 }
