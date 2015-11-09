@@ -8,6 +8,7 @@ Async NPM shell commands: install, test, etc.
 [![dependencies][dependencies-image]][dependencies-url]
 [![devDependencies][devDependencies-image]][devDependencies-url]
 [![endorse][endorse-image]][endorse-url]
+[![Codacy Badge][codacy-image]][codacy-url]
 
 ## API
 
@@ -60,3 +61,5 @@ License: MIT - do anything with the code, but don't blame me if it does not work
 [devDependencies-url]: https://david-dm.org/bahmutov/npm-utils#info=devDependencies
 [endorse-image]: https://api.coderwall.com/bahmutov/endorsecount.png
 [endorse-url]: https://coderwall.com/bahmutov
+[codacy-image]: https://api.codacy.com/project/badge/grade/80f4a9c1aad545fa8aeb090d66a3a7d2
+[codacy-url]: https://www.codacy.com/app/glebbahmutov_2600/npm-utils
