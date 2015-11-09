@@ -8,6 +8,6 @@ gt.asyncTest('getting npm version', 1, function () {
 		gt.string(ver, 'got npm version');
 		console.log('npm version:', ver);
 	}, function (err) {
-		gt.ok(false, 'could not get npm version');
+		gt.ok(false, 'could not get npm version', err);
 	}).done(gt.start);
 });

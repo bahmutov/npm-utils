@@ -10,6 +10,6 @@ gt.asyncTest('getting npm registry url', 2, function () {
     gt.ok(check.webUrl(url), 'registry url', url);
     console.log('npm url:', url);
   }, function (err) {
-    gt.ok(false, 'could not get npm registry url');
+    gt.ok(false, 'could not get npm registry url', err);
   }).done(gt.start);
 });
