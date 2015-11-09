@@ -10,6 +10,16 @@ Async NPM shell commands: install, test, etc.
 [![endorse][endorse-image]][endorse-url]
 [![Codacy Badge][codacy-image]][codacy-url]
 
+## Use
+
+```js
+var npmUtils = require('npm-utils');
+npmUtils.version()
+  .then(function (semver) {
+    console.log('NPM version %s', semver);
+  });
+```
+
 ## API
 
 ```javascript
