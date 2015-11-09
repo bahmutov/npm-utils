@@ -1,4 +1,5 @@
-var check = require('check-types');
+require('lazy-ass');
+var check = require('check-more-types');
 var spawn = require('child_process').spawn;
 var q = require('q');
 var NPM_PATH = require('./npm-path');
@@ -6,7 +7,8 @@ var NPM_PATH = require('./npm-path');
 // returns a promise
 function version() {
   console.log('  npm version');
-  check.verify.string(NPM_PATH, 'missing npm path string');
+  la(check.string(NPM_PATH), 'missing npm path string');
+
   var npm = spawn(NPM_PATH, ['--version']);
   var output = '';
   var errors = '';

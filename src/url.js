@@ -1,5 +1,6 @@
+require('lazy-ass');
 var VerEx = require('verbal-expressions');
-var check = require('check-types');
+var check = require('check-more-types');
 
 var httpTester = new VerEx()
   .startOfLine()
@@ -17,7 +18,7 @@ var gitTester = new VerEx()
   .endOfLine();
 
 function isUrl(str) {
-  check.verify.string(str, 'expected a string');
+  la(check.string(str), 'expected a string');
   return httpTester.test(str) || gitTester.test(str);
 }
 

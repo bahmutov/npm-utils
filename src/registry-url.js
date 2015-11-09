@@ -1,11 +1,13 @@
-var check = require('check-types');
+require('lazy-ass');
+var check = require('check-more-types');
 var spawn = require('child_process').spawn;
 var q = require('q');
 var NPM_PATH = require('./npm-path');
 
 // returns a promise
 function registryUrl() {
-  check.verify.string(NPM_PATH, 'missing npm path string');
+  la(check.string(NPM_PATH), 'missing npm path string');
+
   var npm = spawn(NPM_PATH, ['config', 'get', 'registry']);
   var output = '';
   var errors = '';

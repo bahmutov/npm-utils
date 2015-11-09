@@ -1,5 +1,5 @@
 require('lazy-ass');
-var check = require('check-types');
+var check = require('check-more-types');
 var spawn = require('child_process').spawn;
 var q = require('q');
 var NPM_PATH = require('./npm-path');
@@ -8,8 +8,7 @@ var NPM_PATH = require('./npm-path');
 function test(cmd) {
   var app = NPM_PATH;
   var parts = ['test'];
-  check.verify.string(NPM_PATH, 'missing npm path string');
-
+  la(check.string(NPM_PATH), 'missing npm path string');
 
   if (check.unemptyString(cmd)) {
     cmd = cmd.trim();

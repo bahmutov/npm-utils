@@ -1,5 +1,5 @@
 gt.module('npm registry');
-var check = require('check-types');
+var check = require('check-more-types');
 
 var registryUrl = require('../registry-url');
 

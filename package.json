@@ -23,7 +23,7 @@
     "path": "node_modules/pre-git/node_modules/cz-conventional-changelog"
   },
   "dependencies": {
-    "check-types": "1.4.0",
+    "check-more-types": "2.1.2",
     "lazy-ass": "0.6.0",
     "q": "1.4.1",
     "verbal-expressions": "0.1.2"
