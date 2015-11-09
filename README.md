@@ -27,7 +27,7 @@ returns a promise
 ```
 
 ```javascript
-version() // returns a promise, resolved with version string
+version() // returns a promise, resolved with NPM version string
 ```
 
 ```javascript

@@ -39,7 +39,7 @@ function version() {
         errors: errors
       });
     }
-    check.verify.string(output, 'could not get npm version');
+    la(check.string(output), 'could not get npm version');
     deferred.resolve(output);
   });
   return deferred.promise;
