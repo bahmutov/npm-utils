@@ -28,10 +28,10 @@ path() // returns immediately path to npm command
 
 ```js
 install({
-	name: string,
-	version: string (optional),
-	prefix: string (optional), // folder path prefix
-	passThroughData: obj (optional),
+  name: string,
+  version: string (optional),
+  prefix: string (optional), // folder path prefix
+  passThroughData: obj (optional),
   registry: string (optional) // registry url
 })
 
