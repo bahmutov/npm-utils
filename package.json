@@ -11,6 +11,7 @@
       "commit-msg": "validate-commit-msg",
       "pre-commit": [
         "grunt",
+        "npm test",
         "npm version"
       ],
       "pre-push": [],
