@@ -1,6 +1,6 @@
 require('lazy-ass');
 var check = require('check-more-types');
-var spawn = require('child_process').spawn;
+var spawn = require('win-spawn');
 var q = require('q');
 var NPM_PATH = require('./npm-path');
 
