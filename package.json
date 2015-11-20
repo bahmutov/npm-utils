@@ -43,7 +43,7 @@
     "grunt-nice-package": "0.9.4",
     "gt": "0.8.49",
     "matchdep": "1.0.0",
-    "pre-git": "1.2.1",
+    "pre-git": "1.3.0",
     "semantic-release": "4.3.5"
   },
   "engines": {
@@ -63,10 +63,10 @@
     "url": "https://github.com/bahmutov/npm-utils.git"
   },
   "scripts": {
-    "commit": "./node_modules/pre-git/node_modules/commitizen/bin/git-cz",
+    "commit": "commit-wizard",
     "coverage-codacy": "cat cover/lcov.info | ./node_modules/.bin/codacy-coverage -v -d",
+    "exact-semver": "exact-semver",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "test": "gt src/test/*.js --output",
-    "exact-semver": "exact-semver"
+    "test": "gt src/test/*.js --output"
   }
 }
