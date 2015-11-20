@@ -21,7 +21,9 @@
       "post-merge": []
     }
   },
-  "contributors": [],
+  "contributors": [
+    "Jayson Harshbarger http://hypercubed.com/"
+  ],
   "czConfig": {
     "path": "node_modules/pre-git/node_modules/cz-conventional-changelog"
   },
