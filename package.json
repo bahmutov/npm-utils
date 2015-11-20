@@ -56,6 +56,10 @@
   "engines": {
     "node": ">= 0.10.0"
   },
+  "files": [
+    "index.js",
+    "src/"
+  ],
   "homepage": "https://github.com/bahmutov/npm-utils",
   "keywords": [
     "async",
