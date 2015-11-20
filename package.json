@@ -14,7 +14,10 @@
         "npm test",
         "npm version"
       ],
-      "pre-push": [],
+      "pre-push": [
+        "npm run size",
+        "npm run pkgfiles"
+      ],
       "post-commit": [
         "npm run exact-semver"
       ],
@@ -46,6 +49,7 @@
     "grunt-nice-package": "0.9.4",
     "gt": "0.8.49",
     "matchdep": "1.0.0",
+    "pkgfiles": "2.3.0",
     "pre-git": "1.3.0",
     "semantic-release": "4.3.5"
   },
@@ -70,7 +74,9 @@
     "coverage-codacy": "cat cover/lcov.info | ./node_modules/.bin/codacy-coverage -v -d",
     "exact-semver": "exact-semver",
     "issues": "git-issues",
+    "pkgfiles": "pkgfiles",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "size": "tarball=\"$(npm pack .)\"; wc -c \"${tarball}\"; tar tvf \"${tarball}\"; rm \"${tarball}\";",
     "test": "gt src/test/*.js --output"
   }
 }
