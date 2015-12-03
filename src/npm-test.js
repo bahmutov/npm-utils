@@ -5,10 +5,20 @@ var q = require('q');
 var NPM_PATH = require('./npm-path');
 
 // returns a promise
-function test(cmd) {
+function test(cmd, loggers) {
   var app = NPM_PATH;
   var parts = ['test'];
   la(check.string(NPM_PATH), 'missing npm path string');
+
+  if (check.object(cmd) && !loggers) {
+    loggers = cmd;
+    cmd = undefined;
+  }
+
+  var stdoutLogger = loggers && check.fn(loggers.stdout) ?
+    loggers.stdout : process.stdout.write.bind(process.stdout);
+  var stderrLogger = loggers && check.fn(loggers.stderr) ?
+    loggers.stderr : process.stderr.write.bind(process.stderr);
 
   if (check.unemptyString(cmd)) {
     cmd = cmd.trim();
@@ -28,12 +38,12 @@ function test(cmd) {
   npm.stderr.setEncoding('utf-8');
 
   npm.stdout.on('data', function (data) {
-    process.stdout.write(data);
+    stdoutLogger(data);
     testOutput += data;
   });
 
   npm.stderr.on('data', function (data) {
-    process.stderr.write(data);
+    stderrLogger(data);
     testErrors += data;
   });
 
@@ -56,3 +66,19 @@ function test(cmd) {
 }
 
 module.exports = test;
+
+if (!module.parent) {
+  console.log('running standard output');
+  test()
+    .then(function () {
+      console.log('running custom logger');
+      return test({
+        stdout: function (x) {
+          console.log('OUT:', x);
+        },
+        stderr: function (x) {
+          console.log('ERR:', x);
+        }
+      });
+    }).done();
+}

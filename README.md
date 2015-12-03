@@ -52,6 +52,24 @@ registryUrl(); // returns a promise
 // same as `npm config get registry`
 ```
 
+## Custom message filtering
+
+When running `test()` command you can pass custom logger object to control
+how the output and error messages are displayed. For example to filter messages, one
+can do
+
+```js
+var npmUtils = require('npm-utils');
+npmUtils.test('lint', {
+  stdout: function (x) {
+    console.log('LINT OUTPUT:', x);
+  },
+  stderr: function (x) {
+    console.log('LINT ERROR:', x);
+  }
+});
+```
+
 ## Small print
 
 Author: Gleb Bahmutov @ 2013 @bahmutov
