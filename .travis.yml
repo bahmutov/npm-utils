@@ -14,6 +14,7 @@ before_script:
   - npm prune
 script:
   - npm test
+  - node src/npm-test.js
 after_success:
   - npm run semantic-release
   - npm run coverage-codacy
