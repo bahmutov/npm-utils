@@ -45,8 +45,6 @@ function test(cmd) {
   var deferred = q.defer();
   npm.on('exit', function (code) {
     if (code) {
-      console.error('npm test returned', code);
-      console.error('test errors:\n' + testErrors);
       deferred.reject({
         code: code,
         errors: testErrors
