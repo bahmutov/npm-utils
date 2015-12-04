@@ -49,7 +49,8 @@ test('grunt test'); // spawns new command "grunt test"
 
 ```js
 registryUrl(); // returns a promise
-// same as `npm config get registry`
+// same as `npm config get registry` - which only uses
+// .npmrc in the CURRENT folder (if there is .npmrc file)
 ```
 
 ## Custom message filtering
