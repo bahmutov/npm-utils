@@ -45,20 +45,7 @@ function promiseToRun(args, passThroughData) {
   return deferred.promise;
 }
 
-function promiseToInstall(opts) {
-  opts = opts || {};
-  var name = opts.name, moduleVersion = name;
-  if (name) {
-    check.verify.string(name, 'expected module name string');
-    if (opts.version) {
-      check.verify.string(opts.version, 'expected version string');
-      moduleVersion = moduleVersion + '@' + opts.version;
-    }
-    console.log('  installing', moduleVersion);
-  } else {
-    console.log('  NPM install in current folder');
-  }
-
+function formArguments(opts, name, moduleVersion) {
   var args = ['install'];
   if (opts.prefix) {
     check.verify.string(name, 'expected module name string');
@@ -76,7 +63,24 @@ function promiseToInstall(opts) {
   if (moduleVersion) {
     args.push(moduleVersion);
   }
+  return args;
+}
 
+function promiseToInstall(opts) {
+  opts = opts || {};
+  var name = opts.name, moduleVersion = name;
+  if (name) {
+    check.verify.string(name, 'expected module name string');
+    if (opts.version) {
+      check.verify.string(opts.version, 'expected version string');
+      moduleVersion = moduleVersion + '@' + opts.version;
+    }
+    console.log('  installing', moduleVersion);
+  } else {
+    console.log('  NPM install in current folder');
+  }
+
+  var args = formArguments(opts, name, moduleVersion);
   return promiseToRun(args, opts.passThroughData);
 }
 
