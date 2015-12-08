@@ -54,7 +54,8 @@
   },
   "files": [
     "index.js",
-    "src/"
+    "src/",
+    "!src/test"
   ],
   "homepage": "https://github.com/bahmutov/npm-utils",
   "keywords": [
