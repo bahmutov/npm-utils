@@ -1,4 +1,4 @@
-require('lazy-ass');
+var la = require('lazy-ass');
 var VerEx = require('verbal-expressions');
 var check = require('check-more-types');
 
