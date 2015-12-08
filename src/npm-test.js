@@ -30,7 +30,7 @@ function test(cmd, loggers) {
   la(check.unemptyString(app), 'application name should be a string', app);
   la(check.arrayOfStrings(parts), 'arguments should be an array', parts);
 
-  var npm = spawn(app, parts);
+  var npm = spawn(app, parts, { stdio: 'inherit' });
   var testOutput = '';
   var testErrors = '';
 

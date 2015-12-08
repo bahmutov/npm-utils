@@ -8,7 +8,10 @@ Async NPM shell commands: install, test, etc.
 [![dependencies][dependencies-image]][dependencies-url]
 [![devDependencies][devDependencies-image]][devDependencies-url]
 [![endorse][endorse-image]][endorse-url]
+
 [![Codacy Badge][codacy-image]][codacy-url]
+[![semantic-release][semantic-image] ][semantic-url]
+[![manpm](https://img.shields.io/badge/manpm-%E2%9C%93-3399ff.svg)](https://github.com/bahmutov/manpm)
 
 ## Use
 
@@ -93,3 +96,5 @@ License: MIT - do anything with the code, but don't blame me if it does not work
 [endorse-url]: https://coderwall.com/bahmutov
 [codacy-image]: https://api.codacy.com/project/badge/grade/80f4a9c1aad545fa8aeb090d66a3a7d2
 [codacy-url]: https://www.codacy.com/app/glebbahmutov_2600/npm-utils
+[semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-url]: https://github.com/semantic-release/semantic-release
