@@ -50,28 +50,12 @@ test() // spawns npm test command
 test('grunt test'); // spawns new command "grunt test"
 ```
 
+The child test process will inherit output streams from the parent.
+
 ```js
 registryUrl(); // returns a promise
 // same as `npm config get registry` - which only uses
 // .npmrc in the CURRENT folder (if there is .npmrc file)
-```
-
-## Custom message filtering
-
-When running `test()` command you can pass custom logger object to control
-how the output and error messages are displayed. For example to filter messages, one
-can do
-
-```js
-var npmUtils = require('npm-utils');
-npmUtils.test('lint', {
-  stdout: function (x) {
-    console.log('LINT OUTPUT:', x);
-  },
-  stderr: function (x) {
-    console.log('LINT ERROR:', x);
-  }
-});
 ```
 
 ## Small print
