@@ -58,6 +58,11 @@ registryUrl(); // returns a promise
 // .npmrc in the CURRENT folder (if there is .npmrc file)
 ```
 
+```js
+publish({ tag: '...'});
+// the tag is optional
+```
+
 ## Small print
 
 Author: Gleb Bahmutov @ 2013 @bahmutov
