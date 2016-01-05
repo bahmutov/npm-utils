@@ -15,3 +15,17 @@ gt.async('install into tmp folder', function () {
   .finally(gt.start)
   .done();
 });
+
+gt.async('passes command line flags', function () {
+  var options = {
+    name: 'lodash',
+    prefix: '/tmp/lodash-prefix/',
+    registry: 'http://registry.npmjs.org/',
+    flags: ['--verbose']
+  };
+  install(options).then(function () {
+    return path.join(options.prefix, '/lib/node_modules/' + options.name);
+  })
+  .finally(gt.start)
+  .done();
+});

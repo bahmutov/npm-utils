@@ -63,6 +63,9 @@ function formArguments(opts, name, moduleVersion) {
   if (moduleVersion) {
     args.push(moduleVersion);
   }
+  if (check.array(opts.flags)) {
+    args = args.concat(opts.flags);
+  }
   return args;
 }
 

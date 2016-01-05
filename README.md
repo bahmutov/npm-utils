@@ -35,7 +35,8 @@ install({
   version: string (optional),
   prefix: string (optional), // folder path prefix
   passThroughData: obj (optional),
-  registry: string (optional) // registry url
+  registry: string (optional) // registry url,
+  flags: ['--save', '--verbose'] // list of command line flags to pass to NPM
 })
 
 returns a promise
