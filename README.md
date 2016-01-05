@@ -41,6 +41,9 @@ install({
 returns a promise
 ```
 
+Note: the `name` could be another folder or a tar archive; passed to `npm install <name>`
+unchanged, that can be any match. See `npm help install`
+
 ```js
 version() // returns a promise, resolved with NPM version string
 ```
