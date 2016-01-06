@@ -4,3 +4,4 @@ test2.json
 test3.json
 npm-debug.log
 src/.DS_Store
+*.tgz

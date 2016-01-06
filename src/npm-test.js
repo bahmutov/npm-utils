@@ -1,6 +1,6 @@
 var la = require('lazy-ass');
 var check = require('check-more-types');
-var spawn = require('win-spawn');
+var spawn = require('cross-spawn-async');
 var q = require('q');
 var NPM_PATH = require('./npm-path');
 
