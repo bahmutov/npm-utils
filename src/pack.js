@@ -10,8 +10,8 @@ function pack(options) {
   var command = 'npm pack ' + folder;
   return run(command)
     .then(function () {
-      // find the file
-      return glob(folder + '/*.tgz')
+      // find the generated file in the current folder
+      return glob('./*.tgz')
         .then(function (filenames) {
           if (filenames.length === 1) {
             return filenames[0];
