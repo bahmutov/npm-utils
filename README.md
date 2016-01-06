@@ -67,6 +67,16 @@ publish({ tag: '...'});
 // the tag is optional
 ```
 
+### pack
+
+Runs `npm pack <folder name>` command. Resolves with the name of the generated tarball file.
+
+```js
+pack({ folder: 'path/to/folder' })
+```
+
+If folder is not provided, uses the current one
+
 ## Small print
 
 Author: Gleb Bahmutov @ 2013 @bahmutov
