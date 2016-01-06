@@ -6,5 +6,6 @@ module.exports = {
   isUrl: require('./src/url'),
   registryUrl: require('./src/registry-url'),
   publish: require('./src/publish'),
-  pack: require('./src/pack')
+  pack: require('./src/pack'),
+  getPackage: require('./src/get-package')
 };

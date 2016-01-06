@@ -67,6 +67,15 @@ publish({ tag: '...'});
 // the tag is optional
 ```
 
+### getPackage
+
+Loads `package.json` from a given folder
+
+```js
+var pkg = npm.getPackage(folder);
+console.log('%s version %s', pkg.name, pkg.version);
+```
+
 ### pack
 
 Runs `npm pack <folder name>` command. Resolves with the name of the generated tarball file.
