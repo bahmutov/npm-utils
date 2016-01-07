@@ -86,6 +86,11 @@ pack({ folder: 'path/to/folder' })
 
 If folder is not provided, uses the current one
 
+## Troubleshooting
+
+Run the command with `DEBUG=npm-utils` environment variable set, this package
+uses [debug](https://www.npmjs.com/package/debug)
+
 ## Small print
 
 Author: Gleb Bahmutov @ 2013 @bahmutov

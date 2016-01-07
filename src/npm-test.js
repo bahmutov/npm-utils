@@ -3,6 +3,7 @@ var check = require('check-more-types');
 var spawn = require('cross-spawn-async');
 var q = require('q');
 var NPM_PATH = require('./npm-path');
+var debug = require('debug')('npm-utils');
 
 function testRunner(app, parts) {
   var npm = spawn(app, parts, { stdio: 'inherit' });
@@ -38,7 +39,7 @@ function test(cmd) {
     app = parts.shift();
   }
 
-  console.log('spawning test process', app, parts);
+  debug('spawning test process', app, parts);
   la(check.unemptyString(app), 'application name should be a string', app);
   la(check.arrayOfStrings(parts), 'arguments should be an array', parts);
 

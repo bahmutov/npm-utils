@@ -14,6 +14,11 @@ function formTarballName(pkg) {
 
 function pack(options) {
   options = options || {};
+  if (is.string(options)) {
+    options = { folder: options };
+  }
+  la(is.object(options), 'expected options object for pack', options);
+
   var folder = options.folder ? options.folder : '.';
   var pkg = getPackage(folder);
   la(is.unemptyString(pkg.name) &&
