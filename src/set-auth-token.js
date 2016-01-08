@@ -1,4 +1,9 @@
-var npmUtils = require('./index');
+var la = require('lazy-ass');
+var is = require('check-more-types');
+
+var registryUrl = require('./registry-url');
+la(is.fn(registryUrl), 'expected registry url');
+
 var userHome = require('user-home');
 var join = require('path').join;
 var npmrcFile = join(userHome, '.npmrc');
@@ -37,7 +42,7 @@ function formUrlToken (str) {
 }
 
 function setAuthToken () {
-  return npmUtils.registryUrl()
+  return registryUrl()
     .then(formUrlToken)
     .then(updateNpmrc);
 }
