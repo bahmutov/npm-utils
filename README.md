@@ -86,6 +86,35 @@ pack({ folder: 'path/to/folder' })
 
 If folder is not provided, uses the current one
 
+### setAuthToken
+
+Please execute the `npm login` first!
+
+```js
+setAuthToken()
+    .then(canPublishNow, onError)
+```
+
+Updates the `~/.npmrc` file that can be used by CI servers to publish to NPM.
+The file will have the following line added (only the actual registry url will be used)
+
+    //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+
+Read the [Deploying with npm private modules][deploying post] for details, see
+project [ci-publish](https://github.com/bahmutov/ci-publish) for example how this could be
+used to release from CI after successful tests.
+
+[deploying post]: http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules
+
+Often the source of errors is that the environment does not have `NPM_TOKEN` set,
+or the `.npmrc` file already has the authToken entry for this registry. For example,
+when running locally
+
+    $ NPM_TOKEN=foo node src/set-auth-token.js 
+    npmrc file already has auth token for registry
+    //registry.npmjs.org/:_authToken=
+    [Error: Auth token for registry exists //registry.npmjs.org/:_authToken=]
+
 ## Troubleshooting
 
 Run the command with `DEBUG=npm-utils` environment variable set, this package
