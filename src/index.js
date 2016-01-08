@@ -8,5 +8,6 @@ module.exports = {
   publish: require('./publish'),
   pack: require('./pack'),
   getPackage: require('./get-package'),
-  setAuthToken: require('./set-auth-token')
+  setAuthToken: require('./set-auth-token'),
+  incrementVersion: require('./npm-increment-version')
 };

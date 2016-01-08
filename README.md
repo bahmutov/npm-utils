@@ -115,6 +115,19 @@ when running locally
     //registry.npmjs.org/:_authToken=
     [Error: Auth token for registry exists //registry.npmjs.org/:_authToken=]
 
+### increment version
+
+Runs `npm version [major | minor | patch]` command.
+
+```js
+incrementVersion({
+  increment: 'major|minor|patch',
+  noGit: true // default false = Git commit happens
+})
+```
+
+See `npm help version` - but we only support increments, not absolute values.
+
 ## Troubleshooting
 
 Run the command with `DEBUG=npm-utils` environment variable set, this package
