@@ -6,6 +6,8 @@ var NPM_PATH = require('./npm-path');
 var debug = require('debug')('npm-utils');
 
 function testRunner(app, parts) {
+  la(check.unemptyString(app), 'missing app to run', app);
+  la(check.array(parts), 'missing arguments array', parts);
   var npm = spawn(app, parts, { stdio: 'inherit' });
   var testErrors = '';
 
@@ -21,6 +23,7 @@ function testRunner(app, parts) {
         code: code,
         errors: testErrors
       });
+      return;
     }
     deferred.resolve();
   });
