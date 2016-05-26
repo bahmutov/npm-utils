@@ -1,3 +1,5 @@
+'use strict';
+
 var la = require('lazy-ass');
 var is = require('check-more-types');
 
@@ -8,6 +10,7 @@ var userHome = require('user-home');
 var join = require('path').join;
 var npmrcFile = join(userHome, '.npmrc');
 var fs = require('fs');
+var formUrlToken = require('./form-auth-token');
 
 function updateNpmrc (data) {
   var contents = '';
@@ -26,19 +29,6 @@ function updateNpmrc (data) {
   contents += data.token;
   fs.writeFileSync(npmrcFile, contents, 'utf-8');
   console.log('saved', npmrcFile);
-}
-
-function formUrlToken (str) {
-  if (!process.env.NPM_TOKEN) {
-    throw new Error('Cannot find NPM_TOKEN');
-  }
-  str = str.replace(/^http:/, '');
-  var test = str + ':_authToken=';
-  var token = test + '${NPM_TOKEN}';
-  return {
-    test: test,
-    token: token
-  };
 }
 
 function setAuthToken () {
