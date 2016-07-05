@@ -1,6 +1,8 @@
+'use strict';
+
 var la = require('lazy-ass');
 var check = require('check-more-types');
-var spawn = require('cross-spawn-async');
+var spawn = require('cross-spawn');
 var q = require('q');
 var NPM_PATH = require('./npm-path');
 var debug = require('debug')('npm-utils');
