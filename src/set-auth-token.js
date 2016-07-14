@@ -1,16 +1,13 @@
 'use strict';
 
-var la = require('lazy-ass');
-var is = require('check-more-types');
-
-var registryUrl = require('./registry-url');
-la(is.fn(registryUrl), 'expected registry url');
-
+var registryUrl = require('registry-url');
 var userHome = require('user-home');
 var join = require('path').join;
 var npmrcFile = join(userHome, '.npmrc');
 var fs = require('fs');
+var q = require('q');
 var formUrlToken = require('./form-auth-token');
+var getPackage = require('./get-package');
 
 function updateNpmrc (data) {
   var contents = '';
@@ -32,9 +29,14 @@ function updateNpmrc (data) {
 }
 
 function setAuthToken () {
-  return registryUrl()
-    .then(formUrlToken)
-    .then(updateNpmrc);
+  var deferred = q.defer();
+
+  var registry = registryUrl(getPackage(process.cwd()).name.split('/')[0]);
+  var data = formUrlToken(registry);
+  updateNpmrc(data);
+
+  deferred.resolve();
+  return deferred.promise;
 }
 
 module.exports = setAuthToken;

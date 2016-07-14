@@ -27,3 +27,14 @@ gt.test('handles https url', function () {
     la(/FOO/.test(str), str);
     la(!/https:/.test(str), 'should not have https part', str);
 });
+
+gt.test('handles https url', function () {
+    var registryUrl = 'https://registry.npmjs.org/';
+    var result = form(registryUrl, 'FOO');
+    la(is.object(result), result);
+    la(is.unemptyString(result.token), result);
+
+    var str = result.token;
+    la(/FOO/.test(str), str);
+    la(!/https:/.test(str), 'should not have https part', str);
+});
