@@ -1,15 +1,29 @@
-gt.module('npm registry');
 var check = require('check-more-types');
+var fs = require('fs');
+var path = require('path');
+var registryUrl = require('registry-url');
+var temp = require('temp');
 
-var registryUrl = require('../registry-url');
+temp.track();
 
-gt.asyncTest('getting npm registry url', 2, function () {
-  var promise = registryUrl();
-  promise.then(function (url) {
-    gt.string(url, 'got npm registry url string');
-    gt.ok(check.webUrl(url), 'registry url', url);
-    console.log('npm url:', url);
-  }, function (err) {
-    gt.ok(false, 'could not get npm registry url', err);
-  }).done(gt.start);
+gt.module('registry-url');
+
+gt.async('registry-url returns a URL from .npmrc file', function () {
+  temp.mkdir('npm-utils', function(err, dirPath) {
+    var customRegistry = 'https://npm.example.com/';
+
+    var originalDir = process.cwd();
+    process.chdir(dirPath);
+
+    var npmrcPath = path.join(dirPath, '.npmrc');
+    fs.writeFile(npmrcPath, 'registry=' + customRegistry, function () {
+      var url = registryUrl();
+
+      gt.ok(check.webUrl(url), 'registry url is a url', url);
+      gt.ok(check.same(url, customRegistry), 'registry url is same as .npmrc file', url);
+
+      process.chdir(originalDir);
+      gt.start();
+    });
+  });
 });
