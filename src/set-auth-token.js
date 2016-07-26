@@ -32,7 +32,11 @@ function updateNpmrc (data) {
 function setAuthToken () {
   var deferred = q.defer();
 
-  var registry = registryUrl(getPackage(process.cwd()).name.split('/')[0]);
+  var packageName = getPackage(process.cwd()).name;
+  var scope = packageName.split('/')[0];
+  var registry = registryUrl(scope);
+  console.log('setting auth token for registry', registry);
+
   var data = formUrlToken(registry);
   updateNpmrc(data);
 
