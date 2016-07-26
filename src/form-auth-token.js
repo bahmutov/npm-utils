@@ -13,8 +13,7 @@ function formAuthToken (registryUrl, tokenEnvName) {
 
   la(is.url(registryUrl), 'npm registry should be an url', registryUrl);
 
-  registryUrl = registryUrl
-    .replace(/^http(s)?:/, '');
+  registryUrl = scope + ':registry=' + registryUrl;
   var test = registryUrl + ':_authToken=';
   var token = test + '${' + tokenEnvName + '}';
   return {
