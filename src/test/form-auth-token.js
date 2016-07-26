@@ -38,3 +38,11 @@ gt.test('handles https url', function () {
     la(/FOO/.test(str), str);
     la(!/https:/.test(str), 'should not have https part', str);
 });
+
+gt.test('starts with registry', function () {
+    var registryUrl = 'https://registry.npmjs.org/';
+    var result = form(registryUrl, 'FOO');
+    var str = result.token;
+    la(str.indexOf('//registry.npmjs') === 0,
+        'should start with registry', str);
+});

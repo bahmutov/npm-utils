@@ -12,7 +12,8 @@ var getPackage = require('./get-package');
 function updateNpmrc (data) {
   var contents = '';
   if (fs.existsSync(npmrcFile)) {
-    contents = fs.readFileSync(npmrcFile, 'utf-8') + '\n';
+    contents = fs.readFileSync(npmrcFile, 'utf-8');
+    contents = contents.trim() + '\n';
   }
   if (contents.indexOf(data.token) !== -1) {
     console.log('npmrc file already has contents to add, skipping');
@@ -23,7 +24,7 @@ function updateNpmrc (data) {
     console.error(data.test);
     throw new Error('Auth token for registry exists ' + data.test);
   }
-  contents += data.token;
+  contents += data.token + '\n';
   fs.writeFileSync(npmrcFile, contents, 'utf-8');
   console.log('saved', npmrcFile);
 }

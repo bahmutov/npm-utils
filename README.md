@@ -143,13 +143,13 @@ License: MIT - do anything with the code, but don't blame me if it does not work
 * [glebbahmutov.com](http://glebbahmutov.com)
 * [blog](http://glebbahmutov.com/blog)
 
-[nodei.co]: https://nodei.co/npm/npm-utils.png?downloads=true
+[nodei.co]: https://nodei.co/npm/npm-utils.svg?downloads=true
 [npm-url]: https://npmjs.org/package/npm-utils
-[npm-utils-ci-image]: https://secure.travis-ci.org/bahmutov/npm-utils.png?branch=master
+[npm-utils-ci-image]: https://secure.travis-ci.org/bahmutov/npm-utils.svg?branch=master
 [npm-utils-ci-url]: http://travis-ci.org/#!/bahmutov/npm-utils
-[dependencies-image]: https://david-dm.org/bahmutov/npm-utils.png
+[dependencies-image]: https://david-dm.org/bahmutov/npm-utils.svg
 [dependencies-url]: https://david-dm.org/bahmutov/npm-utils
-[devDependencies-image]: https://david-dm.org/bahmutov/npm-utils/dev-status.png
+[devDependencies-image]: https://david-dm.org/bahmutov/npm-utils/dev-status.svg
 [devDependencies-url]: https://david-dm.org/bahmutov/npm-utils#info=devDependencies
 [endorse-image]: https://api.coderwall.com/bahmutov/endorsecount.png
 [endorse-url]: https://coderwall.com/bahmutov
