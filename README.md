@@ -57,9 +57,11 @@ test('grunt test'); // spawns new command "grunt test"
 The child test process will inherit output streams from the parent.
 
 ```js
-registryUrl(); // returns a promise
-// same as `npm config get registry` - which only uses
-// .npmrc in the CURRENT folder (if there is .npmrc file)
+registryUrl(); 
+// returns a promise resolved with result of https://github.com/sindresorhus/registry-url
+// pass scope for specific registry
+registryUrl('@myCo')
+  .then(url => ...)
 ```
 
 ```js

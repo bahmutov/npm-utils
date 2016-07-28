@@ -1,10 +1,19 @@
+'use strict';
+
+var registryUrl = require('registry-url');
+
+function asyncRegistryUrl (scope) {
+  /* global Promise */
+  return Promise.resolve(registryUrl(scope));
+}
+
 module.exports = {
   install: require('./module-install'),
   test: require('./npm-test'),
   path: require('./npm-path'),
   version: require('./npm-version'),
   isUrl: require('./url'),
-  registryUrl: require('./registry-url'),
+  registryUrl: asyncRegistryUrl,
   publish: require('./publish'),
   pack: require('./pack'),
   getPackage: require('./get-package'),
