@@ -7,7 +7,6 @@ Async NPM shell commands: install, test, etc.
 [![Build][npm-utils-ci-image]][npm-utils-ci-url]
 [![dependencies][dependencies-image]][dependencies-url]
 [![devDependencies][devDependencies-image]][devDependencies-url]
-[![endorse][endorse-image]][endorse-url]
 
 [![Codacy Badge][codacy-image]][codacy-url]
 [![semantic-release][semantic-image] ][semantic-url]
@@ -57,7 +56,7 @@ test('grunt test'); // spawns new command "grunt test"
 The child test process will inherit output streams from the parent.
 
 ```js
-registryUrl(); 
+registryUrl();
 // returns a promise resolved with result of https://github.com/sindresorhus/registry-url
 // pass scope for specific registry
 registryUrl('@myCo')
@@ -112,7 +111,7 @@ Often the source of errors is that the environment does not have `NPM_TOKEN` set
 or the `.npmrc` file already has the authToken entry for this registry. For example,
 when running locally
 
-    $ NPM_TOKEN=foo node src/set-auth-token.js 
+    $ NPM_TOKEN=foo node src/set-auth-token.js
     npmrc file already has auth token for registry
     //registry.npmjs.org/:_authToken=
     [Error: Auth token for registry exists //registry.npmjs.org/:_authToken=]
@@ -153,8 +152,6 @@ License: MIT - do anything with the code, but don't blame me if it does not work
 [dependencies-url]: https://david-dm.org/bahmutov/npm-utils
 [devDependencies-image]: https://david-dm.org/bahmutov/npm-utils/dev-status.svg
 [devDependencies-url]: https://david-dm.org/bahmutov/npm-utils#info=devDependencies
-[endorse-image]: https://api.coderwall.com/bahmutov/endorsecount.png
-[endorse-url]: https://coderwall.com/bahmutov
 [codacy-image]: https://api.codacy.com/project/badge/grade/80f4a9c1aad545fa8aeb090d66a3a7d2
 [codacy-url]: https://www.codacy.com/app/glebbahmutov_2600/npm-utils
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg

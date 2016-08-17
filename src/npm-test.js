@@ -21,9 +21,10 @@ function testRunner(app, parts) {
   var deferred = q.defer();
   npm.on('exit', function (code) {
     if (code) {
+      var defaultMessage = 'Could not execute ' + app + ' ' + parts.join(' ');
       deferred.reject({
         code: code,
-        errors: testErrors
+        errors: testErrors || defaultMessage
       });
       return;
     }
