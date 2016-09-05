@@ -3,6 +3,9 @@
   "description": "Async NPM shell commands",
   "version": "0.0.0-semantic",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "bin": {
+    "set-auth-token-var-name": "bin/set-auth-token-var-name.js"
+  },
   "bugs": {
     "url": "https://github.com/bahmutov/npm-utils/issues"
   },
@@ -59,7 +62,8 @@
   },
   "files": [
     "src/",
-    "!src/test"
+    "!src/test",
+    "bin"
   ],
   "homepage": "https://github.com/bahmutov/npm-utils",
   "keywords": [

@@ -129,6 +129,28 @@ incrementVersion({
 
 See `npm help version` - but we only support increments, not absolute values.
 
+## Bin commands
+
+### Set auth token name
+
+Often the CI needs an auth token for a registry to be able to install private
+modules. The CI should have `NPM_TOKEN` environment variable set, and the
+next command adds the following to the `~/.npmrc` file
+
+```
+//registry.npmjs.org/:_authToken=${NPM_TOKEN}
+```
+
+You can use it like this. From the CI build file (`circle.yml`, `.travis.yml`
+etc) first install this package, then call the command, and then install
+all modules (including the private ones)
+
+```sh
+npm i npm-utils
+$(npm bin)/set-auth-token-var-name
+npm i
+```
+
 ## Troubleshooting
 
 Run the command with `DEBUG=npm-utils` environment variable set, this package

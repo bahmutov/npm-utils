@@ -5,3 +5,4 @@ test3.json
 npm-debug.log
 src/.DS_Store
 *.tgz
+.DS_Store

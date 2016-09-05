@@ -3,6 +3,6 @@
     "jshintrc": ".jshintrc"
   },
   "default": {
-    "src": [ "index.js", "src/*.js" ]
+    "src": [ "index.js", "src/*.js", "bin/*.js" ]
   }
 }
