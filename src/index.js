@@ -1,14 +1,15 @@
-'use strict';
+'use strict'
 
-var registryUrl = require('registry-url');
+var registryUrl = require('registry-url')
 
 function asyncRegistryUrl (scope) {
   /* global Promise */
-  return Promise.resolve(registryUrl(scope));
+  return Promise.resolve(registryUrl(scope))
 }
 
 module.exports = {
   install: require('./module-install'),
+  repoInstall: require('./repo-install'),
   test: require('./npm-test'),
   path: require('./npm-path'),
   version: require('./npm-version'),
@@ -19,4 +20,4 @@ module.exports = {
   getPackage: require('./get-package'),
   setAuthToken: require('./set-auth-token'),
   incrementVersion: require('./npm-increment-version')
-};
+}

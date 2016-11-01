@@ -29,12 +29,16 @@
     "Jayson Harshbarger http://hypercubed.com/"
   ],
   "dependencies": {
+    "chdir-promise": "0.2.1",
     "check-more-types": "2.22.0",
     "cross-spawn": "4.0.0",
     "debug": "2.2.0",
+    "del": "2.2.2",
+    "ggit": "1.11.0",
     "lazy-ass": "1.5.0",
     "q": "2.0.3",
     "registry-url": "3.1.0",
+    "repo-url": "1.0.0",
     "user-home": "2.0.0",
     "verbal-expressions": "0.2.1"
   },
@@ -46,7 +50,6 @@
     "grunt-bump": "0.8.0",
     "grunt-cli": "1.2.0",
     "grunt-complexity": "0.3.0",
-    "grunt-contrib-jshint": "1.0.0",
     "grunt-filenames": "0.4.0",
     "grunt-nice-package": "0.10.2",
     "gt": "0.10.0",
@@ -55,6 +58,7 @@
     "pre-git": "3.10.0",
     "proxyquire": "1.7.10",
     "semantic-release": "6.3.0",
+    "standard": "8.5.0",
     "temp": "0.8.3"
   },
   "engines": {
@@ -84,7 +88,9 @@
     "coverage-codacy": "cat cover/lcov.info | ./node_modules/.bin/codacy-coverage -v -d",
     "exact-semver": "exact-semver",
     "issues": "git-issues",
+    "lint": "standard --verbose --fix src/*.js",
     "pkgfiles": "pkgfiles",
+    "pretest": "npm run lint",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
     "test": "gt src/test/*.js --output"

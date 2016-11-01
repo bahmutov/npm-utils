@@ -3,7 +3,6 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    jshint: grunt.file.readJSON('jshint.json'),
     complexity: {
       default: grunt.file.readJSON('complexity.json')
     },
@@ -23,5 +22,5 @@ module.exports = function(grunt) {
   var plugins = require('matchdep').filterDev('grunt-*');
   plugins.forEach(grunt.loadNpmTasks);
 
-  grunt.registerTask('default', ['nice-package', 'jshint', 'complexity', 'filenames']);
+  grunt.registerTask('default', ['nice-package', 'complexity', 'filenames']);
 };

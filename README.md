@@ -24,9 +24,13 @@ npmUtils.version()
 
 ## API
 
+### NPM command path
+
 ```js
 path() // returns immediately path to npm command
 ```
+
+### Install
 
 ```js
 install({
@@ -41,12 +45,31 @@ install({
 returns a promise
 ```
 
-Note: the `name` could be another folder or a tar archive; passed to `npm install <name>`
-unchanged, that can be any match. See `npm help install`
+Note: the `name` could be another folder or a tar archive; passed
+to `npm install <name>` unchanged, that can be any match.
+See `npm help install`
+
+### repoInstall
+
+Clones Git repository for given NPM module and installs dependencies in the
+cloned folder.
+
+```js
+repoInstall({
+  name: string, // NPM module name
+  folder: string // destination new folder to create
+})
+```
+
+Returns a promise
+
+### Version
 
 ```js
 version() // returns a promise, resolved with NPM version string
 ```
+
+### Test
 
 ```js
 test() // spawns npm test command
@@ -55,6 +78,8 @@ test('grunt test'); // spawns new command "grunt test"
 
 The child test process will inherit output streams from the parent.
 
+### registryUrl
+
 ```js
 registryUrl();
 // returns a promise resolved with result of https://github.com/sindresorhus/registry-url
@@ -62,6 +87,8 @@ registryUrl();
 registryUrl('@myCo')
   .then(url => ...)
 ```
+
+### publish
 
 ```js
 publish({ tag: '...'});
@@ -150,6 +177,10 @@ npm i npm-utils
 $(npm bin)/set-auth-token-var-name
 npm i
 ```
+
+## Related
+
+* [ggit](https://github.com/bahmutov/ggit) - Git utils
 
 ## Troubleshooting
 

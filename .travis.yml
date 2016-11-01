@@ -12,6 +12,8 @@ before_script:
 script:
   - npm test
   - node src/npm-test.js
+  # a few "e2e" tests
+  - node src/repo-install.js
 after_success:
   - npm run semantic-release
   - npm run coverage-codacy
