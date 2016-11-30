@@ -1,11 +1,15 @@
+'use strict'
+
 var la = require('lazy-ass')
 var check = require('check-more-types')
 var spawn = require('child_process').spawn
 var q = require('q')
 var NPM_PATH = require('./npm-path')
+var debug = require('debug')('npm-utils')
 
 function promiseToRun (args, passThroughData) {
   check.verify.array(args, 'expected arguments')
+  debug('module install with args:', args)
 
   var npm = spawn(NPM_PATH, args)
   var errors = ''
