@@ -47,7 +47,9 @@ returns a promise
 
 Note: the `name` could be another folder or a tar archive; passed
 to `npm install <name>` unchanged, that can be any match.
-See `npm help install`
+See `npm help install`.
+
+Without `name` property, it just runs `npm install` in the current folder.
 
 ### repoInstall
 
