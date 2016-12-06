@@ -145,18 +145,22 @@ when running locally
     //registry.npmjs.org/:_authToken=
     [Error: Auth token for registry exists //registry.npmjs.org/:_authToken=]
 
-### increment version
+### increment or set package version
 
-Runs `npm version [major | minor | patch]` command.
+Runs `npm version [major | minor | patch | version]` command.
 
 ```js
 incrementVersion({
-  increment: 'major|minor|patch',
+  increment: 'major|minor|patch|semver version',
   noGit: true // default false = Git commit happens
+})
+// example
+incrementVersion({
+  increment: '2.0.1'
 })
 ```
 
-See `npm help version` - but we only support increments, not absolute values.
+See `npm help version`.
 
 ## Bin commands
 

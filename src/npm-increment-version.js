@@ -7,7 +7,9 @@ var isIncrement = is.oneOf(['major', 'minor', 'patch'])
 
 function npmVersion (opts) {
   la(is.object(opts), 'missing options')
-  la(isIncrement(opts.increment), 'invalid increment', opts)
+  la(isIncrement(opts.increment) ||
+    is.semver(opts.increment), 'invalid increment or version', opts)
+
   var cmd = 'npm version ' + opts.increment
   if (opts.noGit) {
     cmd += ' --no-git-tag-version'
