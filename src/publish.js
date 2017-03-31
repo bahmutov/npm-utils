@@ -15,6 +15,12 @@ function publish (options) {
     debug('publishing with a tag', options.tag)
     command += ' --tag ' + options.tag
   }
+
+  if (is.unemptyString(options.access)) {
+    debug('publishing with specific access', options.access)
+    command += ' --access ' + options.access
+  }
+
   return run(command)
     .catch(function (info) {
       debug('publishing hit an error')
