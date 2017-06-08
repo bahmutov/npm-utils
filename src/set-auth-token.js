@@ -12,7 +12,7 @@ function updateNpmrc (data) {
   var npmrcFile = getNpmrc()
 
   if (fs.existsSync(npmrcFile)) {
-    console.log('Using file:', npmrcFile)
+    console.log('using file:', npmrcFile)
     contents = fs.readFileSync(npmrcFile, 'utf-8')
     contents = contents.trim() + '\n'
   }
