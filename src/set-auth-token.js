@@ -1,17 +1,18 @@
 'use strict'
 
 var registryUrl = require('registry-url')
-var userHome = require('user-home')
-var join = require('path').join
-var npmrcFile = join(userHome, '.npmrc')
 var fs = require('fs')
 var q = require('q')
 var formUrlToken = require('./form-auth-token')
 var getPackage = require('./get-package')
+var npmrcFile = require('local-or-home-npmrc')
+var debug = require('debug')('npm-utils')
 
 function updateNpmrc (data) {
   var contents = ''
+
   if (fs.existsSync(npmrcFile)) {
+    debug('using file:', npmrcFile)
     contents = fs.readFileSync(npmrcFile, 'utf-8')
     contents = contents.trim() + '\n'
   }

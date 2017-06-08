@@ -36,10 +36,10 @@
     "del": "2.2.2",
     "ggit": "1.13.4",
     "lazy-ass": "1.5.0",
+    "local-or-home-npmrc": "1.0.0",
     "q": "2.0.3",
     "registry-url": "3.1.0",
     "repo-url": "1.0.0",
-    "user-home": "2.0.0",
     "verbal-expressions": "0.2.1"
   },
   "devDependencies": {
