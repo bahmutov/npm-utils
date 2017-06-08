@@ -5,12 +5,11 @@ var fs = require('fs')
 var q = require('q')
 var formUrlToken = require('./form-auth-token')
 var getPackage = require('./get-package')
-var getNpmrc = require('./get-npmrc')
+var npmrcFile = require('local-or-home-npmrc')
 var debug = require('debug')('npm-utils')
 
 function updateNpmrc (data) {
   var contents = ''
-  var npmrcFile = getNpmrc()
 
   if (fs.existsSync(npmrcFile)) {
     debug('using file:', npmrcFile)
