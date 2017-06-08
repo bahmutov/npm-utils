@@ -6,13 +6,14 @@ var q = require('q')
 var formUrlToken = require('./form-auth-token')
 var getPackage = require('./get-package')
 var getNpmrc = require('./get-npmrc')
+var debug = require('debug')('npm-utils')
 
 function updateNpmrc (data) {
   var contents = ''
   var npmrcFile = getNpmrc()
 
   if (fs.existsSync(npmrcFile)) {
-    console.log('using file:', npmrcFile)
+    debug('using file:', npmrcFile)
     contents = fs.readFileSync(npmrcFile, 'utf-8')
     contents = contents.trim() + '\n'
   }
