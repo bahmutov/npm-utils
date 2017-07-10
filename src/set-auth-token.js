@@ -5,12 +5,13 @@ var fs = require('fs')
 var q = require('q')
 var formUrlToken = require('./form-auth-token')
 var getPackage = require('./get-package')
-var npmrcFile = require('local-or-home-npmrc')
+var localOrHomeNpmrc = require('local-or-home-npmrc')
 var debug = require('debug')('npm-utils')
 
 function updateNpmrc (data) {
   var contents = ''
 
+  var npmrcFile = localOrHomeNpmrc()
   if (fs.existsSync(npmrcFile)) {
     debug('using file:', npmrcFile)
     contents = fs.readFileSync(npmrcFile, 'utf-8')
@@ -33,7 +34,10 @@ function updateNpmrc (data) {
 function setAuthToken () {
   var deferred = q.defer()
 
-  var packageName = getPackage(process.cwd()).name
+  var cwd = process.cwd()
+  var packageName = getPackage(cwd).name
+  debug('package %s in folder %s', packageName, cwd)
+
   var scope = packageName.split('/')[0]
   var registry = registryUrl(scope)
   console.log('setting auth token for registry', registry)
