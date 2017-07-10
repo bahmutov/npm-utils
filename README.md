@@ -163,6 +163,13 @@ incrementVersion({
 
 See `npm help version`.
 
+### Prune dependencies
+
+```js
+require('npm-utils').prune().catch(console.error);
+// same as "npm prune"
+```
+
 ## Bin commands
 
 ### Set auth token name
