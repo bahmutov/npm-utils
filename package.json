@@ -55,6 +55,7 @@
     "grunt-nice-package": "0.10.3",
     "gt": "0.10.0",
     "matchdep": "1.0.1",
+    "mocha": "3.4.2",
     "pkgfiles": "2.3.0",
     "pre-git": "3.12.0",
     "proxyquire": "1.7.10",
@@ -68,6 +69,7 @@
   "files": [
     "src/",
     "!src/test",
+    "!src/*-spec.js",
     "bin"
   ],
   "homepage": "https://github.com/bahmutov/npm-utils",
@@ -94,9 +96,11 @@
     "issues": "git-issues",
     "lint": "standard --verbose --fix src/*.js",
     "pkgfiles": "pkgfiles",
+    "posttest": "npm run unit",
     "pretest": "npm run lint",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
-    "test": "gt src/test/*.js --output"
+    "test": "gt src/test/*.js --output",
+    "unit": "mocha src/*-spec.js"
   }
 }

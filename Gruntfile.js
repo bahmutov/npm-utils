@@ -3,9 +3,6 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    complexity: {
-      default: grunt.file.readJSON('complexity.json')
-    },
     'nice-package': {
       all: {
         options: {}
@@ -22,5 +19,5 @@ module.exports = function(grunt) {
   var plugins = require('matchdep').filterDev('grunt-*');
   plugins.forEach(grunt.loadNpmTasks);
 
-  grunt.registerTask('default', ['nice-package', 'complexity', 'filenames']);
+  grunt.registerTask('default', ['nice-package', 'filenames']);
 };
