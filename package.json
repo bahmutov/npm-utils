@@ -79,6 +79,9 @@
   ],
   "license": "MIT",
   "main": "src/index.js",
+  "release": {
+    "generateNotes": "github-post-release"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/bahmutov/npm-utils.git"
@@ -95,8 +98,5 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
     "test": "gt src/test/*.js --output"
-  },
-  "release": {
-    "generateNotes": "github-post-release"
   }
 }
