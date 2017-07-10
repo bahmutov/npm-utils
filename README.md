@@ -125,7 +125,8 @@ setAuthToken()
     .then(canPublishNow, onError)
 ```
 
-Updates the `~/.npmrc` file that can be used by CI servers to publish to NPM.
+Updates local `.npmrc` (if found) or profile `~/.npmrc` file that can be used by CI
+servers to publish to NPM.
 The file will have the following line added (only the actual registry url will be used)
 
     //registry.npmjs.org/:_authToken=${NPM_TOKEN}
@@ -168,7 +169,7 @@ See `npm help version`.
 
 Often the CI needs an auth token for a registry to be able to install private
 modules. The CI should have `NPM_TOKEN` environment variable set, and the
-next command adds the following to the `~/.npmrc` file
+next command adds the following to the `.npmrc` or `~/.npmrc` file
 
 ```
 //registry.npmjs.org/:_authToken=${NPM_TOKEN}
