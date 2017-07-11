@@ -214,7 +214,7 @@ License: MIT - do anything with the code, but don't blame me if it does not work
 [nodei.co]: https://nodei.co/npm/npm-utils.svg?downloads=true
 [npm-url]: https://npmjs.org/package/npm-utils
 [npm-utils-ci-image]: https://secure.travis-ci.org/bahmutov/npm-utils.svg?branch=master
-[npm-utils-ci-url]: http://travis-ci.org/#!/bahmutov/npm-utils
+[npm-utils-ci-url]: https://travis-ci.org/bahmutov/npm-utils
 [dependencies-image]: https://david-dm.org/bahmutov/npm-utils.svg
 [dependencies-url]: https://david-dm.org/bahmutov/npm-utils
 [devDependencies-image]: https://david-dm.org/bahmutov/npm-utils/dev-status.svg

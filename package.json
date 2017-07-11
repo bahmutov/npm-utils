@@ -34,6 +34,7 @@
     "cross-spawn": "5.0.1",
     "debug": "2.3.3",
     "del": "2.2.2",
+    "execa": "0.7.0",
     "ggit": "1.13.4",
     "lazy-ass": "1.5.0",
     "local-or-home-npmrc": "github:bahmutov/local-or-home-npmrc",
@@ -61,7 +62,8 @@
     "proxyquire": "1.7.10",
     "semantic-release": "6.3.6",
     "standard": "8.6.0",
-    "temp": "0.8.3"
+    "temp": "0.8.3",
+    "tmp-sync": "1.1.2"
   },
   "engines": {
     "node": ">0.4.0"
@@ -101,6 +103,6 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
     "test": "gt src/test/*.js --output",
-    "unit": "mocha src/*-spec.js"
+    "unit": "mocha --timeout 30000 src/*-spec.js"
   }
 }
