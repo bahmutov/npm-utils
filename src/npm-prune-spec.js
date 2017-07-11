@@ -45,7 +45,7 @@ describe('npm prune', () => {
     return execa.shell(`npm install ${name}`)
   }
 
-  it.only('prunes in the temp folder', () => {
+  it('prunes in the temp folder', () => {
     const folder = tmp.in()
     console.log('prune test in folder', folder)
     return chdir.to(folder)
