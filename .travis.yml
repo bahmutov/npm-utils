@@ -10,6 +10,7 @@ node_js:
 before_script:
   - npm prune
 script:
+  - node .
   - npm test
   - node src/npm-test.js
   # a few "e2e" tests

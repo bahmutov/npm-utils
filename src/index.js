@@ -20,5 +20,5 @@ module.exports = {
   getPackage: require('./get-package'),
   setAuthToken: require('./set-auth-token'),
   incrementVersion: require('./npm-increment-version'),
-  prune: require('/npm-prune')
+  prune: require('./npm-prune')
 }
