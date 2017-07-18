@@ -40,7 +40,7 @@
     "local-or-home-npmrc": "github:bahmutov/local-or-home-npmrc",
     "q": "2.0.3",
     "registry-url": "3.1.0",
-    "repo-url": "1.0.0",
+    "repo-url": "1.0.1",
     "verbal-expressions": "0.2.1"
   },
   "devDependencies": {
