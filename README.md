@@ -1,5 +1,9 @@
 # npm-utils
 
+[![next-update-travis badge][badge]][readme]
+[badge]: https://img.shields.io/badge/next--update--travis-%E2%9C%94%EF%B8%8F-green.svg
+[readme]: https://github.com/bahmutov/next-update-travis#readme
+
 Async NPM shell commands: install, test, etc.
 
 [![NPM info][nodei.co]][npm-url]

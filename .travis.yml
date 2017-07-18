@@ -10,6 +10,7 @@ node_js:
 before_script:
   - npm prune
 script:
+  - ./next-update-travis.sh
   - node .
   - npm test
   - node src/npm-test.js
