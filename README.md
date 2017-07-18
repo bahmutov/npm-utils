@@ -1,9 +1,5 @@
 # npm-utils
 
-[![next-update-travis badge][badge]][readme]
-[badge]: https://img.shields.io/badge/next--update--travis-%E2%9C%94%EF%B8%8F-green.svg
-[readme]: https://github.com/bahmutov/next-update-travis#readme
-
 Async NPM shell commands: install, test, etc.
 
 [![NPM info][nodei.co]][npm-url]
@@ -15,6 +11,7 @@ Async NPM shell commands: install, test, etc.
 [![Codacy Badge][codacy-image]][codacy-url]
 [![semantic-release][semantic-image] ][semantic-url]
 [![manpm](https://img.shields.io/badge/manpm-%E2%9C%93-3399ff.svg)](https://github.com/bahmutov/manpm)
+[![next-update-travis badge][badge]][readme]
 
 ## Use
 
@@ -227,3 +224,5 @@ License: MIT - do anything with the code, but don't blame me if it does not work
 [codacy-url]: https://www.codacy.com/app/glebbahmutov_2600/npm-utils
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
+[badge]: https://img.shields.io/badge/next--update--travis-%E2%9C%94%EF%B8%8F-green.svg
+[readme]: https://github.com/bahmutov/next-update-travis#readme
