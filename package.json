@@ -37,7 +37,7 @@
     "execa": "0.7.0",
     "ggit": "1.23.0",
     "lazy-ass": "1.6.0",
-    "local-or-home-npmrc": "github:bahmutov/local-or-home-npmrc",
+    "local-or-home-npmrc": "1.1.0",
     "q": "2.0.3",
     "registry-url": "3.1.0",
     "repo-url": "1.0.1",
