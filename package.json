@@ -35,7 +35,7 @@
     "debug": "2.6.8",
     "del": "2.2.2",
     "execa": "0.7.0",
-    "ggit": "1.22.1",
+    "ggit": "1.23.0",
     "lazy-ass": "1.6.0",
     "local-or-home-npmrc": "github:bahmutov/local-or-home-npmrc",
     "q": "2.0.3",
