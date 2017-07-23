@@ -3,6 +3,7 @@ var path = require('path')
 var proxyquire = require('proxyquire')
 var temp = require('temp')
 const chdir = require('chdir-promise')
+const la = require('lazy-ass')
 
 temp.track()
 
@@ -53,6 +54,23 @@ describe('set auth token', () => {
       .then(function () {
         var npmrcContents = fs.readFileSync(npmrcPath, 'utf8')
         console.log(npmrcContents)
+        la(npmrcContents.includes('//npm.example.com/:_authToken='))
+      })
+  })
+
+  it('sets the authentication token based on publishConfig URL', function () {
+    var customRegistry = 'https://npm.example.com/'
+    var npmrcPath = path.join(dirPath, '.npmrc')
+    var packagePath = path.join(dirPath, 'package.json')
+
+    fs.writeFileSync(npmrcPath, '@myco:registry=' + customRegistry, { encoding: 'utf8' })
+    fs.writeFileSync(packagePath, '{ "name": "@myco/test-package", "publishConfig": { "registry": "https://private.example.com/" } }', { encoding: 'utf8' })
+
+    return setAuthToken()
+      .then(function () {
+        var npmrcContents = fs.readFileSync(npmrcPath, 'utf8')
+        console.log(npmrcContents)
+        la(npmrcContents.includes('//private.example.com/:_authToken='))
       })
   })
 })
