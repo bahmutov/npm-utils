@@ -35,11 +35,24 @@ function setAuthToken () {
   var deferred = q.defer()
 
   var cwd = process.cwd()
-  var packageName = getPackage(cwd).name
+  var packageContents = getPackage(cwd)
+  var packageName = packageContents.name
   debug('package %s in folder %s', packageName, cwd)
 
-  var scope = packageName.split('/')[0]
-  var registry = registryUrl(scope)
+  // If set, prefer the value of the `packageConfig.registry` property over the value of the registry as set
+  // in the user's `.npmrc` file.
+  // In one scenario, a package may fetch its dependencies from a virtual registry that is an overlay of a private
+  // registry over the public npm registry. Yet, that package is configured to publish directly to the private registry
+  // URL. To account for this scenario we need to get the value of the private registry URL and configure it within
+  // the `.npmrc` file.
+  var registry
+  if (packageContents.publishConfig && packageContents.publishConfig.registry) {
+    registry = packageContents.publishConfig.registry
+  } else {
+    var scope = packageName.split('/')[0]
+    registry = registryUrl(scope)
+  }
+
   console.log('setting auth token for registry', registry)
 
   var data = formUrlToken(registry)
