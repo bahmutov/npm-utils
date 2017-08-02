@@ -59,7 +59,7 @@
     "mocha": "3.5.0",
     "next-update-travis": "1.7.0",
     "pkgfiles": "2.3.2",
-    "pre-git": "3.15.1",
+    "pre-git": "3.15.2",
     "proxyquire": "1.8.0",
     "semantic-release": "6.3.6",
     "standard": "8.6.0",
