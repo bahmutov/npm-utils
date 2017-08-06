@@ -34,7 +34,7 @@
     "cross-spawn": "5.1.0",
     "debug": "2.6.8",
     "del": "2.2.2",
-    "execa": "0.7.0",
+    "execa": "0.8.0",
     "ggit": "1.23.1",
     "lazy-ass": "1.6.0",
     "local-or-home-npmrc": "1.1.0",
