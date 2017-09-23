@@ -32,7 +32,7 @@
     "chdir-promise": "0.4.1",
     "check-more-types": "2.24.0",
     "cross-spawn": "5.1.0",
-    "debug": "2.6.8",
+    "debug": "2.6.9",
     "del": "2.2.2",
     "execa": "0.8.0",
     "ggit": "1.23.1",
