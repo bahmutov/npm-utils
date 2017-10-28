@@ -29,7 +29,7 @@
     "Jayson Harshbarger http://hypercubed.com/"
   ],
   "dependencies": {
-    "chdir-promise": "0.4.1",
+    "chdir-promise": "0.6.2",
     "check-more-types": "2.24.0",
     "cross-spawn": "5.1.0",
     "debug": "2.6.9",
