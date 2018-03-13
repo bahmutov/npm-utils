@@ -42,7 +42,7 @@ describe('npm prune', () => {
 
   const install = name => {
     console.log('installing %s without saving', name)
-    return execa.shell(`npm install ${name}`)
+    return execa.shell(`npm install ${name} --no-save`)
   }
 
   it('prunes in the temp folder', () => {
