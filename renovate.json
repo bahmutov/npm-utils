@@ -3,5 +3,6 @@
   "automerge": true,
   "major": {
     "automerge": false
-  }
+  },
+  "excludePackageNames": ["grunt", "grunt-cli"]
 }
