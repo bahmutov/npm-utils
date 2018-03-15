@@ -12,6 +12,10 @@ Async NPM shell commands: install, test, etc.
 [![semantic-release][semantic-image] ][semantic-url]
 [![manpm](https://img.shields.io/badge/manpm-%E2%9C%93-3399ff.svg)](https://github.com/bahmutov/manpm)
 [![next-update-travis badge][badge]][readme]
+[![renovate-app badge][renovate-badge]][renovate-app]
+
+[renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
+[renovate-app]: https://renovateapp.com/
 
 ## Use
 
