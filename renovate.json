@@ -4,5 +4,5 @@
   "major": {
     "automerge": false
   },
-  "excludePackageNames": ["grunt", "grunt-cli"]
+  "excludePackageNames": ["grunt", "grunt-cli", "grunt-complexity"]
 }
