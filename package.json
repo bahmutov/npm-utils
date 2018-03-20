@@ -55,7 +55,7 @@
     "grunt-filenames": "0.4.0",
     "grunt-nice-package": "0.10.4",
     "gt": "0.10.0",
-    "matchdep": "1.0.1",
+    "matchdep": "2.0.0",
     "mocha": "5.0.4",
     "next-update-travis": "1.7.1",
     "pkgfiles": "2.3.2",
