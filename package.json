@@ -61,7 +61,7 @@
     "pkgfiles": "2.3.2",
     "pre-git": "3.17.1",
     "proxyquire": "2.0.1",
-    "semantic-release": "6.3.6",
+    "semantic-release": "15.1.6",
     "standard": "11.0.1",
     "temp": "0.8.3",
     "tmp-sync": "1.1.2"
