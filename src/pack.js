@@ -9,7 +9,7 @@ var getPackage = require('./get-package')
 // NPM pack generates file in the format
 // <name>-<version>.tgz
 function formTarballName (pkg) {
-  return pkg.name + '-' + pkg.version + '.tgz'
+  return pkg.name.replace('@', '').replace('/', '-') + '-' + pkg.version + '.tgz'
 }
 
 function pack (options) {
